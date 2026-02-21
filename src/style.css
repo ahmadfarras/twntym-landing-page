@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Dark-mode variant (class-based toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Semantic CSS tokens — light mode defaults */
+:root {
+  --canvas:           #f2f5f2;
+  --canvas-alt:       #ffffff;
+  --surface:          #e9efe9;
+  --foreground:       #2c2c2c;
+  --foreground-muted: #5a5e56;
+  --foreground-dim:   #9ca39a;
+  --card-border:      rgba(163, 177, 139, 0.25);
+}
+
+/* Dark mode overrides */
+.dark {
+  --canvas:           #1b241d;
+  --canvas-alt:       #121814;
+  --surface:          #232d26;
+  --foreground:       #f1f5f1;
+  --foreground-muted: #a3b18a;
+  --foreground-dim:   #788575;
+  --card-border:      rgba(163, 177, 139, 0.12);
+}
+
+/* Tailwind v4 theme extension */
+@theme inline {
+  --color-canvas:           var(--canvas);
+  --color-canvas-alt:       var(--canvas-alt);
+  --color-surface:          var(--surface);
+  --color-foreground:       var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-dim:   var(--foreground-dim);
+  --color-card-border:      var(--card-border);
+  --color-primary:          #a3b18a;
+  --color-primary-dark:     #8a9a75;
+  --color-primary-light:    #dad7cd;
+  --font-display: Inter, sans-serif;
+  --font-body:    Inter, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: "FILL" 1;
+}
